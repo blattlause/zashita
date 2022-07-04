@@ -1,29 +1,7 @@
-import numpy as np
+﻿import numpy as np
 import random
 
-def getNumber ():
-    flag = 1
-    while flag == 1:
-        number = int(input('Введите число: '))
-        if number > 0 and number < 4 :
-            return number
-        else: print("Ошибка: введите чиcло из диапозона [1; 3]")
-
-def inputt():
-    for i in range(max_count):
-        array[i] = int(input("Введите элемент массива: "))
-
-def operation():
-    min_index = 0
-    for i in range(max_count):
-        if array[i] < array[min_index]:
-            min_index = i
-    if min_index-3 < 0:
-        print("Ошибка: индекс для минимального числа меньше трех")
-    else:
-        array[min_index-3] = array[min_index]
-        array[min_index] = 101
-
+from func import *
 
 max_count = 10
 array = np.zeros(max_count)
@@ -39,14 +17,14 @@ while flag ==1:
             array[i] = random.randint(0, 40)
         print("Старый массив")
         print(array)
-        operation()
+        operation(max_count, array)
         print("Новый массив")
         print(array)
     elif n == 2:
-        inputt()
+        inputt(max_count, array)
         print("Старый массив")
         print(array)
-        operation()
+        operation(max_count, array)
         print("Новый массив")
         print(array)
     elif n == 3:
